@@ -1,5 +1,8 @@
 html {
   box-sizing: border-box;
+  line-height: 1.5;
+  margin: 0;
+  background-color: #f2f1ed;
 }
 
 *,
