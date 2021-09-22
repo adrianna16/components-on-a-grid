@@ -3,6 +3,7 @@ html {
   line-height: 1.5;
   margin: 0;
   background-color: #f2f1ed;
+  font-family: "Patua One", sans-serif;
 }
 
 *,
@@ -18,15 +19,41 @@ img {
 body {
   font-family: "Patua One", sans-serif;
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
+  display: grid;
+  grid-template-areas:
+    "img img links"
+    "img img img"
+    "logo img img";
+}
+
+.pano {
+  position: relative;
+  grid-row: 1;
+  grid-area: img;
 }
 
 .logo {
   width: 14rem;
+  grid-area: logo;
+  grid-gap: 1rem;
+}
+
+h1 {
+  position: absolute;
+  grid-row: 1;
+}
+
+nav {
+  position: absolute;
+  grid-area: links;
 }
 
 ul {
@@ -40,4 +67,17 @@ li {
 a {
   text-decoration: underline;
   color: #fff;
+}
+
+main {
+  display: flex;
+  grid-row: 2;
+}
+
+h2 {
+  color: #30658d;
+}
+
+p {
+  font-family: Georgia;
 }
