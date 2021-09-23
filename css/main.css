@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   line-height: 1.5;
   background-color: #f2f1ed;
-  font-family: Georgia;
+  font-family: Georgia, serif;
 }
 
 *,
@@ -18,6 +18,13 @@ img {
 body {
   font-family: "Patua One", sans-serif;
   margin: 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "banner banner"
+  "img1   img1";
+  gap: 1rem;
 }
 
 header {
@@ -25,53 +32,70 @@ header {
   display: contents;
 }
 
+.banner {
+    display: flex;
+}
+
 .pano {
-  margin: 1rem;
+  grid-area: banner;
 }
 
 .logo {
   width: 14rem;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  z-index: 1;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
-ul {
+nav {
+  grid-column: 2 / -1;
+  grid-row: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: end;
   list-style: none;
-  justify-content: space-around;
+  margin: 0;
+  padding: 0;
 }
 
-li {
-  display: inline;
-  font-size: 2rem;
-  font-family: "Patua One", sans-serif;
+nav li {
+  padding: 1rem;
 }
 
-a {
+nav a {
   text-decoration: underline;
   color: #fff;
-  margin: 1rem;
+  font-size: 2rem;
 }
 
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 1rem;
+  display: contents;
 }
 
-figure:first-child {
-  grid-column: 1;
-  grid-row: 1;
+figure {
+  margin: 0;
 }
 
-figure:last-child {
-  grid-column: 2;
-  grid-row: 1;
+
+figure:nth-of-type(1) {
+  grid-area: img1;
+}
+
+figure:nth-of-type(2) {
+  grid-area: img2;
 }
 
 h2 {
   color: #30658d;
+  margin: 0;
   font-family: "Patua One", sans-serif;
 }
 
 p {
-  font-family: Georgia;
+ margin: 0;
 }
