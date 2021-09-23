@@ -3,7 +3,7 @@ html {
   line-height: 1.5;
   margin: 0;
   background-color: #f2f1ed;
-  font-family: "Patua One", sans-serif;
+  font-family: Georgia;
 }
 
 *,
@@ -20,64 +20,61 @@ body {
   font-family: "Patua One", sans-serif;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-
+  grid-template-areas:
+  "header"
+  "main"
 }
 
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
-  display: grid;
-  grid-column: 1 / 2;
-  grid-rows: 1;
-}
-
-.pano {
-  position: relative;
+  grid-area: header;
 }
 
 .logo {
   width: 14rem;
+  margin: 2rem;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
-h1 {
-  position: absolute;
-}
-
-nav {
-  position: absolute;
+.pano {
+  position: relative;
+  margin: 1rem;
+  width: 100%;
 }
 
 ul {
   list-style: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1rem;
+  padding-top: 1rem;
 }
 
 li {
   display: inline;
+  font-size: 2rem;
+  font-family: "Patua One", sans-serif;
 }
 
 a {
   text-decoration: underline;
   color: #fff;
+  margin: 1rem;
 }
 
 main {
-  display: contents;
-}
-
-main > figure:first-child {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-main > figure:last-child {
-  grid-column: 2;
-  grid-row: 2;
+  display: flex;
+  grid-area: main;
 }
 
 h2 {
   color: #30658d;
+  font-family: "Patua One", sans-serif;
 }
 
 p {
