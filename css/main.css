@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
   line-height: 1.5;
-  margin: 0;
   background-color: #f2f1ed;
   font-family: Georgia;
 }
@@ -21,14 +20,19 @@ body {
   margin: 0;
   display: grid;
   grid-template-areas:
-  "header"
-  "main"
+    "header"
+    "main";
 }
 
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
-  grid-area: header;
+}
+
+.pano {
+  position: relative;
+  margin: 1rem;
+  width: 100%;
 }
 
 .logo {
@@ -40,19 +44,12 @@ header {
   bottom: 0;
 }
 
-.pano {
-  position: relative;
-  margin: 1rem;
-  width: 100%;
-}
-
 ul {
   list-style: none;
   position: absolute;
   top: 0;
   right: 0;
-  padding-right: 1rem;
-  padding-top: 1rem;
+  justify-content: space-around;
 }
 
 li {
